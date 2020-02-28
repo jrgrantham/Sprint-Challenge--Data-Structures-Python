@@ -15,10 +15,12 @@ duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
 
-# for name_1 in names_1:
-#     for name_2 in names_2:
-#         if name_1 == name_2:
-#             duplicates.append(name_1)
+# for name_1 in names_1:                n * (what's inside of the loop)         O(n)
+#     for name_2 in names_2:              n * (what's inside of the loop)         O(n)
+#         if name_1 == name_2:              constant                                O(1)
+#             duplicates.append(name_1)     constant                                O(1)
+
+# O(n^2)
 
 bst = BinarySearchTree(names_1[0])
 
