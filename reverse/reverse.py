@@ -41,7 +41,33 @@ class LinkedList:
       current = current.get_next()
     # if we've gotten here, then the target node isn't in our list
     return False
+  
 
   def reverse_list(self):
-    # TO BE COMPLETED
-    pass
+
+    # reverse the link and not the order:
+
+    # a -> b -> c -> d
+    # a <- b -> c -> d
+    # a <- b <- c -> d
+    # a <- b <- c <- d
+
+      # store the initial element
+      current = self.head
+      # store the previous element
+      previous = None
+
+      # iterate until through list and swap next to previous
+      while current:
+          # store the 'next' element to preserve it.
+          next_element = current.next_node
+          # now swap the current elements 'next' to 'previous'
+          current.next_node = previous
+          # update the 'previous' to current for next iteration
+          previous = current
+          # update the 'current' to the 'next' for next iteration
+          current = next_element
+      # once complete, set the head to the current value
+        # the current value gets over written in the loop (step 3)
+        # setting the head is stored in 'previous'
+      self.head = previous
